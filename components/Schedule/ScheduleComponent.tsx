@@ -10,7 +10,7 @@ const Schedule:FC<{ data: any, className?: string, timezone: string | null; }> =
     <div className={className}>
         <Stage width={500} height={300}>
             <Layer>
-                {Array.isArray(data) && data.map((item: any) => (
+                {Array.isArray(data) && timezone && data.map((item: any) => (
                     <ScheduleItem key={item.title} x={START_X} y={START_Y} data={item} timezone={timezone} />
                 ))}    
             </Layer>
